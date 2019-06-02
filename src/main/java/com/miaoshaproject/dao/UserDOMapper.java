@@ -2,8 +2,9 @@ package com.miaoshaproject.dao;
 
 import com.miaoshaproject.dataobject.UserDO;
 import com.miaoshaproject.dataobject.UserDOExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface UserDOMapper {
     long countByExample(UserDOExample example);
@@ -19,6 +20,8 @@ public interface UserDOMapper {
     List<UserDO> selectByExample(UserDOExample example);
 
     UserDO selectByPrimaryKey(Integer id);
+
+    UserDO selectByTelphone(String telphone);
 
     int updateByExampleSelective(@Param("record") UserDO record, @Param("example") UserDOExample example);
 
